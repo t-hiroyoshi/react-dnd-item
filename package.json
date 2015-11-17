@@ -23,7 +23,7 @@
     "droppable",
     "component"
   ],
-  "author": "Hiroyoshi Takahashi",
+  "author": "Hiroyoshi Takahashi <t.hiroyoshi209@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/t-hiroyoshi/react-dnd-item/issues"

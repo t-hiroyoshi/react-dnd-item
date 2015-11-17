@@ -1,4 +1,5 @@
 # [WIP] React DnD Item
+[![Build Status](https://travis-ci.org/t-hiroyoshi/react-dnd-item.svg)](https://travis-ci.org/t-hiroyoshi/react-dnd-item)
 
 A draggable and droppable item component for React.
 Simple React DnD wrapper to use your functions which depend on drop position.
