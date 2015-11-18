@@ -1,9 +1,10 @@
 {
   "name": "react-dnd-item",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A draggable and droppable item comopnent for React",
   "main": "lib/index.js",
   "scripts": {
+    "prepublish": "rm -rf lib && ./node_modules/.bin/webpack",
     "build": "rm -rf lib && ./node_modules/.bin/webpack",
     "test": "BABEL_JEST_STAGE=0 jest"
   },
