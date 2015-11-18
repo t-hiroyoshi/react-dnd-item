@@ -1,6 +1,8 @@
 # [WIP] React DnD Item
 [![Build Status](https://travis-ci.org/t-hiroyoshi/react-dnd-item.svg)](https://travis-ci.org/t-hiroyoshi/react-dnd-item)
 
+### Welcome PR and issues!
+
 A draggable and droppable item component for React.
 Simple React DnD wrapper to use your functions which depend on drop position.
 
@@ -19,6 +21,20 @@ import React, { Component } from 'react';
 import { DnDItem, DropPositions } from "react-dnd-item";
 
 export default class YourComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      somethings = [
+        {id: "1", name: "somethigs1"},
+        {id: "2", name: "somethigs2"},
+        {id: "3", name: "somethigs3"},
+        {id: "4", name: "somethigs4"},
+        {id: "5", name: "somethigs5"},
+        {id: "6", name: "somethigs6"}
+      ]
+    };
+  }
+
   dropAction(position, sourceId, targetId) {
     // sourceId: dragged item id, targetId: dropped item id
     // This function is good for call flux actions.
@@ -58,6 +74,7 @@ export default class YourComponent extends Component {
   }
 
   render() {
+    const { somethings } = this.state;
     const dropAction = ::this.dropAction;
 
     // ToDo: You can set your hover actions!
@@ -68,8 +85,8 @@ export default class YourComponent extends Component {
 
     return (
       <div>
-        {somethis.map({item =>
-          <DnDItem dropActions={dropAction} id={item.id} key={item.id}>
+        {somethings.map({something =>
+          <DnDItem dropAction={dropAction} id={something.id} key={something.id}>
             <div>{item.name}</div>
           </DnDItem>
         })}
