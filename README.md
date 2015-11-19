@@ -18,8 +18,11 @@ npm install react-dnd-item --save
 
 ```js
 import React, { Component } from 'react';
+import { DragDropContext }from "react-dnd";
+import HTML5Backend from "react-dnd-html5-backend";
 import { DnDItem, DropPositions } from "react-dnd-item";
 
+@DragDropContext(HTML5Backend)
 export default class YourComponent extends Component {
   constructor(props) {
     super(props);
