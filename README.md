@@ -88,11 +88,11 @@ export default class YourComponent extends Component {
 
     return (
       <div>
-        {somethings.map({something =>
+        {somethings.map(something =>
           <DnDItem dropAction={dropAction} id={something.id} key={something.id}>
             <div>{item.name}</div>
           </DnDItem>
-        })}
+        )}
       </div>
     );
   }
