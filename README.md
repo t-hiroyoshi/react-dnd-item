@@ -5,8 +5,18 @@
 
 A draggable and droppable item component for React.
 Simple React DnD wrapper to use your functions which depend on drop position.
-
 Drag and drop are controlled by [React DnD](https://github.com/gaearon/react-dnd).
+
+You can try demo!
+
+```sh
+git clone git@github.com:t-hiroyoshi/react-dnd-item.git
+cd react-dnd-item
+npm i
+npm start
+```
+
+and open `http://localhost:8080`!
 
 ## Installation
 
