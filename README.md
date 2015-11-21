@@ -28,22 +28,22 @@ npm install react-dnd-item --save
 
 ```js
 import React, { Component } from 'react';
-import { DragDropContext }from "react-dnd";
-import HTML5Backend from "react-dnd-html5-backend";
-import { DnDItem, DropPositions } from "react-dnd-item";
+import { DragDropContext }from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DnDItem, DropPositions } from 'react-dnd-item';
 
 @DragDropContext(HTML5Backend)
-export default class YourComponent extends Component {
+export default class ExampleDnD extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      somethings = [
-        {id: "1", name: "somethigs1"},
-        {id: "2", name: "somethigs2"},
-        {id: "3", name: "somethigs3"},
-        {id: "4", name: "somethigs4"},
-        {id: "5", name: "somethigs5"},
-        {id: "6", name: "somethigs6"}
+      somethings: [
+        {id: '1', name: 'somethigs1'},
+        {id: '2', name: 'somethigs2'},
+        {id: '3', name: 'somethigs3'},
+        {id: '4', name: 'somethigs4'},
+        {id: '5', name: 'somethigs5'},
+        {id: '6', name: 'somethigs6'}
       ]
     };
   }
@@ -65,24 +65,25 @@ export default class YourComponent extends Component {
 
     switch (position) {
     case TOP_LEFT:
-      // some actions
+      // return some action
     case TOP_CENTER:
-      // some actions
+      // return some action
     case TOP_RIGHT:
-      // some actions
+      // return some action
     case MIDDLE_LEFT:
-      // some actions
+      // return some action
     case MIDDLE_CENTER:
-      // some actions
+      // return some action
     case MIDDLE_RIGHT:
-      // some actions
+      // return some action
     case BOTTOM_LEFT:
-      // some actions
+      // return some action
     case BOTTOM_CENTER:
-      // some actions
+      // return some action
     case BOTTOM_RIGHT:
-      // some actions
+      // return some action
     default:
+      return false;
     }
   }
 
@@ -100,7 +101,7 @@ export default class YourComponent extends Component {
       <div>
         {somethings.map(something =>
           <DnDItem dropAction={dropAction} id={something.id} key={something.id}>
-            <div>{item.name}</div>
+            <div>{something.name}</div>
           </DnDItem>
         )}
       </div>
