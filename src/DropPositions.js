@@ -1,6 +1,6 @@
 export default {
   TOP_LEFT: Symbol('TOP_LEFT'),
-  TOP_MIDDLE: Symbol('TOP_MIDDLE'),
+  TOP_CENTER: Symbol('TOP_CENTER'),
   TOP_RIGHT: Symbol('TOP_RIGHT'),
   MIDDLE_LEFT: Symbol('MIDDLE_LEFT'),
   MIDDLE_CENTER: Symbol('MIDDLE_CENTER'),

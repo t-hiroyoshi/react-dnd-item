@@ -7,7 +7,13 @@ module.exports = {
     library: "ReactDnDItem",
     libraryTarget: "umd"
   },
-  resolve: { "root": "./src" },
-  externals: { "react": "React" },
-  module: { loaders: [{ test: /\.jsx?$/, loader: "babel", exclude: /node_modules/ }] }
+  resolve: {
+    "root": "./src"
+  },
+  externals: {
+    "react": "React"
+  },
+  module: {
+    loaders: [{ test: /\.jsx?$/, loader: "babel", exclude: /node_modules/ }]
+  }
 };
