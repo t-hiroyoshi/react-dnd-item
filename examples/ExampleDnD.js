@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { DragDropContext }from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
-import { DnDItem, DropPositions } from "react-dnd-item";
+
+import { DnDItem, DropPositions } from "../src/index";
 
 @DragDropContext(HTML5Backend)
-class Example extends Component {
+class ExampleDnD extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      somethings = [
+      somethings: [
         {id: "1", name: "somethigs1"},
         {id: "2", name: "somethigs2"},
         {id: "3", name: "somethigs3"},
@@ -36,43 +37,45 @@ class Example extends Component {
 
     switch (position) {
     case TOP_LEFT:
-      this.setState({ message: `${sourceId} dropped on ${targetId} ${position}` });
+      this.setState({ message: `TOP_LEFT ${sourceId} dropped on ${targetId}` });
     case TOP_CENTER:
-      this.setState({ message: `${sourceId} dropped on ${targetId} ${position}` });
+      this.setState({ message: `TOP_CENTER ${sourceId} dropped on ${targetId}` });
     case TOP_RIGHT:
-      this.setState({ message: `${sourceId} dropped on ${targetId} ${position}` });
+      this.setState({ message: `TOP_RIGHT ${sourceId} dropped on ${targetId}` });
     case MIDDLE_LEFT:
-      this.setState({ message: `${sourceId} dropped on ${targetId} ${position}` });
+      this.setState({ message: `MIDDLE_LEFT ${sourceId} dropped on ${targetId}` });
     case MIDDLE_CENTER:
-      this.setState({ message: `${sourceId} dropped on ${targetId} ${position}` });
+      this.setState({ message: `MIDDLE_CENTER ${sourceId} dropped on ${targetId}` });
     case MIDDLE_RIGHT:
-      this.setState({ message: `${sourceId} dropped on ${targetId} ${position}` });
+      this.setState({ message: `MIDDLE_RIGHT ${sourceId} dropped on ${targetId}` });
     case BOTTOM_LEFT:
-      this.setState({ message: `${sourceId} dropped on ${targetId} ${position}` });
+      this.setState({ message: `BOTTOM_LEFT ${sourceId} dropped on ${targetId}` });
     case BOTTOM_CENTER:
-      this.setState({ message: `${sourceId} dropped on ${targetId} ${position}` });
+      this.setState({ message: `BOTTOM_CENTER ${sourceId} dropped on ${targetId}` });
     case BOTTOM_RIGHT:
-      this.setState({ message: `${sourceId} dropped on ${targetId} ${position}` });
+      this.setState({ message: `BOTTOM_RIGHT ${sourceId} dropped on ${targetId}` });
     default:
-      this.setState({ message: "error!" });
     }
   }
 
   render() {
-    const { somethings, message } = this.state;
+    const {
+      somethings,
+      message
+    } = this.state;
     const dropAction = ::this.dropAction;
 
     return (
       <div>
         <h1>{ message }</h1>
-        {somethings.map({something =>
+        {somethings.map(something =>
           <DnDItem dropAction={dropAction} id={something.id} key={something.id}>
-            <div>{item.name}</div>
+            <div>{something.name}</div>
           </DnDItem>
-        })}
+        )}
       </div>
     );
   }
 }
 
-ReactDOM.render(<Example />), document.getElementById('example'));
+ReactDOM.render(<ExampleDnD />, document.getElementById('example'));
