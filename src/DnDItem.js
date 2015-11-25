@@ -75,7 +75,7 @@ function getPosition(monitor, component) {
 @DropTarget(ItemTypes.DND_ITEM, dropTarget, connect => ({ connectDropTarget: connect.dropTarget() }))
 @DragSource(ItemTypes.DND_ITEM, dragSource, connect => ({ connectDragSource: connect.dragSource() }))
 export default class DnDItem extends Component {
-  static proptypes = {
+  static propTypes = {
     areaLine: PropTypes.array,
     children: PropTypes.node.isRequired,
     connectDragSource: PropTypes.func.isRequired,

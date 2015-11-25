@@ -1,4 +1,4 @@
-# [WIP] React DnD Item
+# React DnD Item
 [![Build Status](https://travis-ci.org/t-hiroyoshi/react-dnd-item.svg)](https://travis-ci.org/t-hiroyoshi/react-dnd-item)
 
 ### Welcome PR and issues!
