@@ -1,6 +1,6 @@
 {
   "name": "react-dnd-item",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A draggable and droppable item comopnent for React",
   "main": "lib/index.js",
   "scripts": {
