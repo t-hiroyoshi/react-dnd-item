@@ -59,18 +59,56 @@ class ExampleDnD extends Component {
     }
   }
 
+  hoverAction(position, sourceId, targetId) {
+    const {
+      TOP_LEFT,
+      TOP_CENTER,
+      TOP_RIGHT,
+      MIDDLE_LEFT,
+      MIDDLE_CENTER,
+      MIDDLE_RIGHT,
+      BOTTOM_LEFT,
+      BOTTOM_CENTER,
+      BOTTOM_RIGHT
+    } = DropPositions;
+
+    switch (position) {
+    case TOP_LEFT:
+      return this.setState({ message: `TOP_LEFT ${sourceId} hover on ${targetId}` });
+    case TOP_CENTER:
+      return this.setState({ message: `TOP_CENTER ${sourceId} hover on ${targetId}` });
+    case TOP_RIGHT:
+      return this.setState({ message: `TOP_RIGHT ${sourceId} hover on ${targetId}` });
+    case MIDDLE_LEFT:
+      return this.setState({ message: `MIDDLE_LEFT ${sourceId} hover on ${targetId}` });
+    case MIDDLE_CENTER:
+      return this.setState({ message: `MIDDLE_CENTER ${sourceId} hover on ${targetId}` });
+    case MIDDLE_RIGHT:
+      return this.setState({ message: `MIDDLE_RIGHT ${sourceId} hover on ${targetId}` });
+    case BOTTOM_LEFT:
+      return this.setState({ message: `BOTTOM_LEFT ${sourceId} hover on ${targetId}` });
+    case BOTTOM_CENTER:
+      return this.setState({ message: `BOTTOM_CENTER ${sourceId} hover on ${targetId}` });
+    case BOTTOM_RIGHT:
+      return this.setState({ message: `BOTTOM_RIGHT ${sourceId} hover  on ${targetId}` });
+    default:
+      return false;
+    }
+  }
+
   render() {
     const {
       somethings,
       message
     } = this.state;
     const dropAction = ::this.dropAction;
+    const hoverAction = ::this.hoverAction;
 
     return (
       <div>
         <h1>{ message }</h1>
         {somethings.map(something =>
-          <DnDItem dropAction={dropAction} id={something.id} key={something.id}>
+          <DnDItem dropAction={dropAction} hoverAction={hoverAction} id={something.id} key={something.id}>
             <div>{something.name}</div>
           </DnDItem>
         )}

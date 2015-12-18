@@ -4,8 +4,12 @@
 ### Welcome PR and issues!
 
 A draggable and droppable item component for React.
+
 Simple React DnD wrapper to use your functions which depend on drop position.
+
 Drag and drop are controlled by [React DnD](https://github.com/gaearon/react-dnd).
+
+## Demo
 
 You can try demo!
 
@@ -16,7 +20,7 @@ npm i
 npm start
 ```
 
-and open `http://localhost:8080`!
+and `open http://localhost:8080`!
 
 ## Installation
 
@@ -87,12 +91,16 @@ export default class ExampleDnD extends Component {
     }
   }
 
+  hoverAction(position, sourceId, targetId) {
+    // same as dropActions
+  }
+
   render() {
     const { somethings } = this.state;
-    const dropAction = ::this.dropAction;
 
-    // ToDo: You can set your hover actions!
-    // const hoverActions = ::this.hoverActions;
+    // dropAction is required but hoverAction is optional.
+    const dropAction = ::this.dropAction;
+    const hoverAction = ::this.hoverAction;
 
     // ToDo: You can set your component area divider!
     // const areaLine = ["20px 20px", "220px 120px"];
@@ -100,7 +108,7 @@ export default class ExampleDnD extends Component {
     return (
       <div>
         {somethings.map(something =>
-          <DnDItem dropAction={dropAction} id={something.id} key={something.id}>
+          <DnDItem dropAction={dropAction} hoverAction={hoverAction} id={something.id} key={something.id}>
             <div>{something.name}</div>
           </DnDItem>
         )}
