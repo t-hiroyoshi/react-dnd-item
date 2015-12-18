@@ -9,6 +9,12 @@ const dropTarget = {
     const { id } = props;
     const position = getPosition(monitor, component);
     return { position, id };
+  },
+  hover(props, monitor, component) {
+    const { id } = props;
+    const source = monitor.getItem();
+    const position = getPosition(monitor, component)
+    if (id && position) props.hoverAction(position, source.id, id);
   }
 };
 
