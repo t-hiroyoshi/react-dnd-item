@@ -103,13 +103,19 @@ class ExampleDnD extends Component {
     } = this.state;
     const dropAction = ::this.dropAction;
     const hoverAction = ::this.hoverAction;
+    const style = {
+      background: "skyblue",
+      width: "400px",
+      height: "100px",
+      margin: "5px 5px"
+    };
 
     return (
       <div>
         <h1>{ message }</h1>
         {somethings.map(something =>
           <DnDItem dropAction={dropAction} hoverAction={hoverAction} id={something.id} key={something.id}>
-            <div>{something.name}</div>
+            <div style={style}>{something.name}</div>
           </DnDItem>
         )}
       </div>
