@@ -105,11 +105,16 @@ export default class ExampleDnD extends Component {
     // ToDo: You can set your component area divider!
     // const areaLine = ["20px 20px", "220px 120px"];
 
+    // You can set your style to dnd item.
+    const yourStyle = {
+      background: "blue"
+    };
+
     return (
       <div>
         {somethings.map(something =>
           <DnDItem dropAction={dropAction} hoverAction={hoverAction} id={something.id} key={something.id}>
-            <div>{something.name}</div>
+            <div style={yourStyle}>{something.name}</div>
           </DnDItem>
         )}
       </div>
