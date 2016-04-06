@@ -88,8 +88,7 @@ export default class DnDItem extends Component {
     connectDropTarget: PropTypes.func.isRequired,
     dropAction: PropTypes.func.isRequired,
     hoverAction: PropTypes.func,
-    id: PropTypes.string.isRequired,
-    key: PropTypes.string.isRequired
+    id: PropTypes.string.isRequired
   };
 
   render() {
@@ -98,9 +97,12 @@ export default class DnDItem extends Component {
       connectDropTarget,
       children
     } = this.props;
+    const itemStyle = {
+      display: "inline-block"
+    };
 
     return connectDragSource(connectDropTarget(
-      <div>
+      <div style={itemStyle}>
         { children }
       </div>
     ));
